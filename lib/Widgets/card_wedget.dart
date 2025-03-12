@@ -7,8 +7,15 @@ import 'package:projects/screens/details_page.dart';
 
 class CardProperty extends StatelessWidget {
   const CardProperty({
-    super.key,
+    super.key, required this.title, required this.location, required this.bedrooms, required this.bathrooms, required this.price, required this.type,
   });
+final String title;
+final String location;
+final String bedrooms;
+final String bathrooms;
+final String price;
+final String type;
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +58,7 @@ class CardProperty extends StatelessWidget {
                                       children: [
                                         Icon(FontAwesomeIcons.house,size: 13,color: Colors_app.orange_color,),
                                         SizedBox(width: 10,),
-                                        Text('House',style: TextStyle(fontWeight: FontWeight.bold,color: Colors_app.orange_color),)
+                                        Text(type,style: TextStyle(fontWeight: FontWeight.bold,color: Colors_app.orange_color),)
                                       ],
                                     ),
                                   ),
@@ -69,7 +76,7 @@ class CardProperty extends StatelessWidget {
                   SizedBox(height: 10,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 7),
-                    child: Text("apartment 140m new capital".toTitleCase,overflow: TextOverflow.ellipsis,maxLines: 1,textAlign:TextAlign.left,style: TextStyle(fontSize:19,fontWeight: FontWeight.bold,)),
+                    child: Text(title.toTitleCase,overflow: TextOverflow.ellipsis,maxLines: 1,textAlign:TextAlign.left,style: TextStyle(fontSize:19,fontWeight: FontWeight.bold,)),
                   ),
 
                       SizedBox(height: 10,),
@@ -78,7 +85,7 @@ class CardProperty extends StatelessWidget {
                     child: Row(children: [
                       Icon(FontAwesomeIcons.locationDot,color: Colors.grey[400],size: 20,),
                       SizedBox(width: 5,),
-                      Text("New Cairo,Cairo,Egypt",textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400] ))
+                      Text(location,textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400] ))
                     ]
                     ),
                   ),
@@ -87,13 +94,13 @@ class CardProperty extends StatelessWidget {
                     child: Row(children: [
                       Icon(FontAwesomeIcons.bed),
                       SizedBox(width: 10,),
-                      Text("2"),
+                      Text(bedrooms),
                       SizedBox(width: 20,),
                       Icon(FontAwesomeIcons.sink),
                       SizedBox(width: 10,),
-                      Text("2"),
+                      Text(bathrooms),
                       SizedBox(width: 25,),
-                      FittedBox(fit:BoxFit.scaleDown,child: Text("20,000,000EGP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),)),
+                      FittedBox(fit:BoxFit.scaleDown,child: Text(price,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),)),
                     ],),
                   ),
                 ]),),

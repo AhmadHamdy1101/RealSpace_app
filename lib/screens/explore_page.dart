@@ -30,21 +30,12 @@ class ExplorePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Top Property",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                    Text("Explorer Property",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                     TextButton(onPressed: () {} , child: Text("See More"),)
                   ],
                 ),
-                PropertyListView(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                PropertyListView(Direction: Axis.vertical,hight: MediaQuery.sizeOf(context).height, Count: 10,),
 
-                    Text("New Property",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    TextButton(onPressed: () {} , child: Text("See More"),)
-                  ],
-                ),
-                SizedBox(height: 15,),
-                PropertyListView(),
 
 
               ],),

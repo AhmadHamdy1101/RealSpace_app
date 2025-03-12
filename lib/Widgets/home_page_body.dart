@@ -38,7 +38,7 @@ class HomePageBody extends StatelessWidget {
                     TextButton(onPressed: () {} , child: Text("See More"),)
                   ],
                 ),
-                PropertyListView(),
+                PropertyListView(hight: MediaQuery.sizeOf(context).height*0.411,Direction: Axis.horizontal,Count: 6,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -48,7 +48,7 @@ class HomePageBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 15,),
-                PropertyListView(),
+                PropertyListView(hight: MediaQuery.sizeOf(context).height*0.411,Direction: Axis.horizontal,Count: 6),
 
 
               ],),
