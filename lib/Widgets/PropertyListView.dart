@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:projects/Widgets/card_wedget.dart';
+import 'package:projects/screens/explore_page.dart';
 
 
 class PropertyListView extends StatelessWidget {
@@ -17,7 +18,7 @@ class PropertyListView extends StatelessWidget {
     return SizedBox(
       height: hight,
       child: ListView.builder(itemCount: Count,scrollDirection: Direction,itemBuilder: (context, index) {
-        return CardProperty(title: 'apartment 140M in new capital',bathrooms: "2",bedrooms: "2",location: 'new capital,cairo,egypt',price: "20,000,000",type: "House",);
+        return CardProperty(url: ExplorePage(),title: 'apartment 140M in new capital',bathrooms: "2",bedrooms: "2",location: 'new capital,cairo,egypt',price: "20,000,000",type: "House",);
 
         // cardProperty();
 

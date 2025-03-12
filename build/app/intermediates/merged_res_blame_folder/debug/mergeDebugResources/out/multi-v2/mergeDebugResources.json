@@ -275,7 +275,7 @@
             "outputFile": "com.example.projects.app-debug-26:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "D:\\programing\\mobile dev\\realspace\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1258,7 +1258,7 @@
                     }
                 },
                 {
-                    "source": "D:\\programing\\mobile dev\\realspace\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

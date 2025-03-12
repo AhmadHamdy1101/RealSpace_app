@@ -1,8 +1,8 @@
-#Wed Mar 12 21:47:47 EET 2025
-base.0=D\:\\programing\\mobile dev\\realspace\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\programing\\mobile dev\\realspace\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\programing\\mobile dev\\realspace\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.3=D\:\\programing\\mobile dev\\realspace\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Wed Mar 12 22:40:41 EET 2025
+base.0=D\:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.3=D\:\\programing\\mobile dev\\realspace_app\\RealSpace_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=1/classes.dex
