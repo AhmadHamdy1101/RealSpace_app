@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projects/Widgets/IconsListView.dart';
-import 'package:projects/Widgets/PropertyListView.dart';
 
+
+import 'IconsListView.dart';
+import 'PropertyListView.dart';
 import 'searchBarWedget.dart';
 
 class HomePageBody extends StatelessWidget {

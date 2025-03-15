@@ -11,8 +11,8 @@ class CardProperty extends StatelessWidget {
   });
 final String title;
 final String location;
-final String bedrooms;
-final String bathrooms;
+final int bedrooms;
+final int bathrooms;
 final String price;
 final String type;
 
@@ -94,11 +94,11 @@ final String type;
                     child: Row(children: [
                       Icon(FontAwesomeIcons.bed),
                       SizedBox(width: 10,),
-                      Text(bedrooms),
+                      Text('$bedrooms'),
                       SizedBox(width: 20,),
                       Icon(FontAwesomeIcons.sink),
                       SizedBox(width: 10,),
-                      Text(bathrooms),
+                      Text('$bathrooms'),
                       SizedBox(width: 25,),
                       FittedBox(fit:BoxFit.scaleDown,child: Text(price,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),)),
                     ],),

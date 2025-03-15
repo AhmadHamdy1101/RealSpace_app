@@ -37,6 +37,7 @@ final currentIndex = 0.obs;
         ],
       ),
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: (value) {
           currentIndex.value = value;
