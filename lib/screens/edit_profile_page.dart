@@ -15,12 +15,9 @@ class EditProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-          title: Text('Edit Profile'),
-          leading: IconButton(
-              onPressed: (){Get.back();},
-              icon: Icon(FontAwesomeIcons.arrowLeft)),
-      ),
+      backgroundColor: Colors.transparent,
+      title: Text('Edit Profile'),
+      leading: BackButton(),),
       backgroundColor: Colors_app.white_color,
       body: CustomScrollView(
         slivers: [
