@@ -16,6 +16,7 @@ class EditProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
       backgroundColor: Colors.transparent,
+      centerTitle: true,
       title: Text('Edit Profile'),
       leading: BackButton(),),
       backgroundColor: Colors_app.white_color,
