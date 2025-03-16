@@ -24,7 +24,7 @@ class _PropertyListViewState extends State<PropertyListView> {
     return SizedBox(
       height: widget.hight,
       child: ListView.builder(itemCount: widget.Count,scrollDirection: widget.Direction,itemBuilder: (context, index) {
-        return CardProperty(title: 'apartment 140M in new capital',bathrooms: 2,bedrooms: 2,location: 'new capital,cairo,egypt',price: "20,000,000",type: "House",);
+        return CardProperty(title: 'apartment 140M in new capital',bathrooms: "2",bedrooms: "2",location: 'new capital,cairo,egypt',price: "20,000,000",type: "House",);
 
         // cardProperty();
 

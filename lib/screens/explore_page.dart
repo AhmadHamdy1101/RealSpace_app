@@ -69,8 +69,8 @@ class _ExplorePageState extends State<ExplorePage> {
                   return CardProperty(
                     title: item['title'],
                     location: item['location'].toString(),
-                    bedrooms: item['bedrooms'],
-                    bathrooms: item['bathrooms'],
+                    bedrooms: item['bedrooms'].toString(),
+                    bathrooms: item['bathrooms'].toString(),
                     price: item['price'].toString(),
                     type: item['type'],
                   );

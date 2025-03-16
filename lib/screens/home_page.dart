@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:projects/screens/explore_page.dart';
+import 'package:projects/screens/edit_profile_page.dart';
 import 'package:projects/screens/profile_page.dart';
 
 import '../Widgets/home_page_body.dart';
@@ -42,7 +43,7 @@ final currentIndex = 0.obs;
         onPageChanged: (value) {
           currentIndex.value = value;
         },
-        children: [HomePageBody(),ExplorePage(),ProfilePage()],),
+        children: [HomePageBody(),ExplorePage(),Text("heeeelp"),Profile_page()],),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (value) {
             currentIndex.value = value;

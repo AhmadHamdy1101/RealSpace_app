@@ -11,8 +11,8 @@ class CardProperty extends StatelessWidget {
   });
 final String title;
 final String location;
-final int bedrooms;
-final int bathrooms;
+final String bedrooms;
+final String bathrooms;
 final String price;
 final String type;
 
@@ -99,8 +99,8 @@ final String type;
                       Icon(FontAwesomeIcons.sink),
                       SizedBox(width: 10,),
                       Text('$bathrooms'),
-                      SizedBox(width: 25,),
-                      FittedBox(fit:BoxFit.scaleDown,child: Text(price,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),)),
+                      SizedBox(width: MediaQuery.sizeOf(context).width*0.12,),
+                      FittedBox(fit:BoxFit.scaleDown,child: Text(price,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)),
                     ],),
                   ),
                 ]),),
