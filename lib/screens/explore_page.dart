@@ -18,15 +18,24 @@ class _ExplorePageState extends State<ExplorePage> {
   int itemsToShow = 6;
 
   Future<void> _fetchData() async {
-    final response = await supabase
-        .from('property')
-        .select()
-        .limit(itemsToShow);
+    try {
+      final response = await supabase
+          .from('property')
+          .select('*')
+          .limit(itemsToShow);
 
-    setState(() {
-      items = response;
-    });
-    print(response);
+      print("Raw Supabase Response: $response");
+
+      if (response != null && response.isNotEmpty) {
+        setState(() {
+          items = response;
+        });
+      } else {
+        print("Supabase returned an empty list or null!");
+      }
+    } catch (e) {
+      print("Error fetching data: $e");
+    }
   }
 
   void _loadMoreItems() {
@@ -69,9 +78,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   return CardProperty(
                     title: item['title'],
                     location: item['location'].toString(),
-                    bedrooms: item['bedrooms'].toString(),
-                    bathrooms: item['bathrooms'].toString(),
-                    price: item['price'].toString(),
+                    bedrooms: item['bedroom'].toString(),
+                    bathrooms:item['bathroom'].toString(),
+                    price: item['price'].toString() + ' ' +'EGP',
                     type: item['type'],
                   );
                 } else {
