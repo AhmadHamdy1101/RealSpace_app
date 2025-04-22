@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:projects/utils/app_text_style.dart';
 
 import '../constants/Colors.dart';
 
@@ -22,10 +23,10 @@ class Profile_button extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(color: Colors_app.orange_color,borderRadius: BorderRadius.circular(50)),
-            child: Icon(icon,color: Colors_app.white_color,size: 25,),
+            decoration: BoxDecoration(color: Colors_app.white_color,borderRadius: BorderRadius.circular(50)),
+            child: Icon(icon,color: Colors_app.orange_color,size: 25,),
           ),
-          Text(text,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+          Text(text,style: AppStyles.styleBoldBlack20(context),)
         ],),
     );
   }

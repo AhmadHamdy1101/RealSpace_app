@@ -53,7 +53,7 @@
 39-->[androidx.core:core:1.13.1] C:\Users\Ahmed Hamdy\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 40        android:debuggable="true"
 41        android:extractNativeLibs="true"
-42        android:icon="@mipmap/ic_launcher"
+42        android:icon="@mipmap/launcher_icon"
 43        android:label="projects" >
 44        <activity
 45            android:name="com.example.projects.MainActivity"

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:projects/models/supadart_header.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../Widgets/card_wedget.dart';
 import '../Widgets/searchBarWedget.dart';
+import '../models/property.dart';
+import '../utils/constaints.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -12,19 +15,15 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> {
-  final supabase = Supabase.instance.client;
 
-  List<dynamic> items = [];
+
+  List<Property> items = [];
   int itemsToShow = 6;
 
   Future<void> _fetchData() async {
     try {
-      final response = await supabase
-          .from('property')
-          .select('*')
-          .limit(itemsToShow);
+      final response = await supabase.property.select().withConverter(Property.converter);
 
-      print("Raw Supabase Response: $response");
 
       if (response != null && response.isNotEmpty) {
         setState(() {
@@ -36,6 +35,7 @@ class _ExplorePageState extends State<ExplorePage> {
     } catch (e) {
       print("Error fetching data: $e");
     }
+
   }
 
   void _loadMoreItems() {
@@ -76,12 +76,13 @@ class _ExplorePageState extends State<ExplorePage> {
                 if (index < items.length) {
                   final item = items[index];
                   return CardProperty(
-                    title: item['title'],
-                    location: item['location'].toString(),
-                    bedrooms: item['bedroom'].toString(),
-                    bathrooms:item['bathroom'].toString(),
-                    price: item['price'].toString() + ' ' +'EGP',
-                    type: item['type'],
+                    title: item.title!,
+                    location: item.location.toString(),
+                    bedrooms: item.bedroom.toString(),
+                    bathrooms:item.bathroom.toString(),
+                    price: item.price.toString() + ' ' +'EGP',
+                    type: item.type!,
+                    area: item.area.toString(),
                   );
                 } else {
                   return items.length >= itemsToShow

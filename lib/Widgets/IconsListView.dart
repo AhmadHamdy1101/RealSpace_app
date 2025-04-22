@@ -19,9 +19,9 @@ class IconsListView extends StatelessWidget {
         SizedBox(width: 15,),
         IconText(text: 'Townhouse', icons: FontAwesomeIcons.city, color: Colors.red[700]!),
         SizedBox(width: 15,),
-        IconText(text: 'Warehouse', icons: FontAwesomeIcons.warehouse, color: Colors.blueAccent),
+        IconText(text: 'Standalone', icons: FontAwesomeIcons.warehouse, color: Colors.blueAccent),
         SizedBox(width: 15,),
-        IconText(text: 'Empty Land', icons: Icons.nature_people, color: Colors.green),
+        IconText(text: 'Twinhouse', icons: Icons.nature_people, color: Colors.green),
 
       ],),
     ),);
