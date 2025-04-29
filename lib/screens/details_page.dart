@@ -1,13 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:projects/models/photo.dart';
+import 'package:projects/models/property.dart';
+import 'package:projects/models/supadart_header.dart';
 import 'package:projects/screens/home_page.dart';
 import '../constants/Colors.dart';
+import '../utils/constaints.dart';
 
 
-class DetailsPage extends StatelessWidget {
-  const DetailsPage({super.key});
+class DetailsPage extends StatefulWidget {
+  const DetailsPage({super.key, required this.property, required this.photo,});
+final Property property;
+final List<Photo> photo;
 
+  @override
+  State<DetailsPage> createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends State<DetailsPage> {
+  List<Photo> photoitem = [];
+
+  Future<void> _fetchData() async {
+    try {
+      final photo = await supabase.photo.select().eq('property_id',widget.property.id).withConverter(Photo.converter);
+
+      if (photo != null && photo.isNotEmpty) {
+        setState(() {
+
+          photoitem = photo;
+        });
+      } else {
+        print("Supabase returned an empty list or null!");
+      }
+    } catch (e) {
+      print("Error fetching data: $e");
+    }
+
+  }
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _fetchData();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +57,9 @@ class DetailsPage extends StatelessWidget {
             children: [
           SizedBox(
             height: MediaQuery.sizeOf(context).height*0.4,
-            child: PageView(children: [
-              Image.network("https://cdn.pixabay.com/photo/2023/10/06/07/58/kitchen-8297678_1280.jpg",fit: BoxFit.cover,),
-              Image.network("https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",fit: BoxFit.cover)
-            ],),
+            child: PageView(children: photoitem.map((e){
+              return Image.network(e.url?? '',fit: BoxFit.cover,);
+            }).toList() ,),
           ),
           SizedBox(height: 20,),
           Padding(
@@ -38,26 +73,26 @@ class DetailsPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        width: 90,
+
                         padding: EdgeInsets.symmetric(vertical:5,horizontal: 9 ),
                         decoration: BoxDecoration(color: Colors.grey[100],borderRadius: BorderRadius.circular(50)),
                         child: Row(
                           children: [
                             Icon(FontAwesomeIcons.house,size: 15,color: Colors_app.orange_color,),
                             SizedBox(width: 10,),
-                            Text('House',style: TextStyle(fontWeight: FontWeight.bold,color: Colors_app.orange_color,fontSize: 15),)
+                            Text(widget.property.type??'',style: TextStyle(fontWeight: FontWeight.bold,color: Colors_app.orange_color,fontSize: 15),)
                           ],
                         ),
                       ),
                     ],
                   ),
                   SizedBox(height: 10,),
-                  Text("Apartment 160M² in mostakbal city".toUpperCase(),overflow: TextOverflow.clip,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,),),
+                  Text("${widget.property.title}".toUpperCase(),overflow: TextOverflow.clip,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,),),
                   SizedBox(height: 6,),
                   Row(children: [
                     Icon(FontAwesomeIcons.locationDot,color: Colors.grey[400],size: 20,),
                     SizedBox(width: 5,),
-                    Text("New Cairo,Cairo,Egypt",textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400],fontWeight: FontWeight.bold ))
+                    Text("${widget.property.location},Egypt",textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400],fontWeight: FontWeight.bold ))
                   ]
                   ),
                   SizedBox(height: 20,),
@@ -70,7 +105,7 @@ class DetailsPage extends StatelessWidget {
                         children: [
                           Icon(FontAwesomeIcons.bed),
                           SizedBox(height: 5,),
-                          Text('4 bedroom')
+                          Text('${widget.property.bedroom} bedroom')
                         ],),),
                     Container(
                       padding: EdgeInsets.all(6),
@@ -80,7 +115,7 @@ class DetailsPage extends StatelessWidget {
                         children: [
                           Icon(FontAwesomeIcons.shower),
                           SizedBox(height: 5,),
-                          Text('4 bathroom')
+                          Text('${widget.property.bathroom} bathroom')
                         ],),),
                     Container(
                       padding: EdgeInsets.all(6),
@@ -90,14 +125,14 @@ class DetailsPage extends StatelessWidget {
                         children: [
                           Icon(FontAwesomeIcons.maximize),
                           SizedBox(height: 5,),
-                          Text('160 Acres')
+                          Text('${widget.property.area} Acres')
                         ],),),
                   ],),
                   SizedBox(height: 10,),
                   Text("Description",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                   SizedBox(height: 10,),
                   Text(
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in'
+    '${widget.property.description}'
                     ,style: TextStyle(color: Colors_app.darkgray_color),
                   ),
                   SizedBox(height: 25,),
@@ -122,7 +157,7 @@ class DetailsPage extends StatelessWidget {
                     ],),
                   SizedBox(height: 25,),
                   Text("Location",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  Text("New Cairo,Cairo,Egypt",textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400],fontWeight: FontWeight.bold )),
+                  Text("${widget.property.location},Egypt",textAlign:TextAlign.left,style: TextStyle(fontSize:20,color: Colors.grey[400],fontWeight: FontWeight.bold )),
                   SizedBox(height: 20,)
 
 
@@ -165,7 +200,7 @@ class DetailsPage extends StatelessWidget {
         Text("20,000,000EGP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
         ElevatedButton(onPressed: (){},style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors_app.orange_color),foregroundColor: WidgetStatePropertyAll(Colors_app.white_color)), child: Text("Book now"),)
       ],),)
-    
+
     );
   }
 }

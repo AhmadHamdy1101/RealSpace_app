@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/models/photo.dart';
 import 'package:projects/models/supadart_header.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -18,16 +19,19 @@ class _ExplorePageState extends State<ExplorePage> {
 
 
   List<Property> items = [];
+  List<Photo> photoitem = [];
   int itemsToShow = 6;
 
   Future<void> _fetchData() async {
     try {
       final response = await supabase.property.select().withConverter(Property.converter);
+      final photo = await supabase.photo.select().withConverter(Photo.converter);
 
 
       if (response != null && response.isNotEmpty) {
         setState(() {
           items = response;
+          photoitem = photo;
         });
       } else {
         print("Supabase returned an empty list or null!");
@@ -76,13 +80,8 @@ class _ExplorePageState extends State<ExplorePage> {
                 if (index < items.length) {
                   final item = items[index];
                   return CardProperty(
-                    title: item.title!,
-                    location: item.location.toString(),
-                    bedrooms: item.bedroom.toString(),
-                    bathrooms:item.bathroom.toString(),
-                    price: item.price.toString() + ' ' +'EGP',
-                    type: item.type!,
-                    area: item.area.toString(),
+                    property: items[index],
+                    photos: photoitem,
                   );
                 } else {
                   return items.length >= itemsToShow

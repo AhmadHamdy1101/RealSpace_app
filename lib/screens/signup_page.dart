@@ -86,9 +86,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors_app.orange_color)),
                   suffixIcon:
-                      _isEmailValid
-                          ? const Icon(Icons.check_circle, color: Colors.green)
-                          : null,
+                  _isEmailValid
+                      ? const Icon(Icons.check_circle, color: Colors.green)
+                      : null,
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -184,9 +184,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: const Text(
                       'Log In',
                       style: TextStyle(
-                        color: Colors_app.orange_color,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
+                          color: Colors_app.orange_color,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16
                       ),
                     ),
                   ),

@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:projects/models/location.dart';
 import 'package:projects/models/property.dart';
 import 'card_wedget.dart';
 
@@ -25,8 +24,6 @@ class _PropertyListViewState extends State<PropertyListView> {
 
   @override
   Widget build(BuildContext context) {
-    int itemsToShow = 10;
-
     return SizedBox(
       height: widget.hight,
       child: ListView.builder(
@@ -35,13 +32,9 @@ class _PropertyListViewState extends State<PropertyListView> {
         scrollDirection: widget.Direction,
         itemBuilder: (context, index)  {
           return CardProperty(
-            title: widget.property[index].title!,
-            bathrooms: widget.property[index].bathroom!.toString(),
-            bedrooms: widget.property[index].bedroom!.toString(),
-            location: widget.property[index].location!,
-            price: widget.property[index].price!.toString(),
-            type: widget.property[index].type!,
-            area: widget.property[index].area!.toString(),
+              property: widget.property[index],
+            photos: [],
+
           );
 
           // cardProperty();
