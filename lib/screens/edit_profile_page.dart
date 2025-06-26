@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:projects/screens/home_page.dart';
-import 'package:projects/screens/profile_page.dart';
-import '../Widgets/customTextField.dart';
 import '../constants/Colors.dart';
+import '../utils/Widgets/customTextField.dart';
 
 
 class EditProfilePage extends StatelessWidget {

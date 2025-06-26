@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart' show Get;
-import 'package:projects/screens/login_page.dart';
-import 'package:projects/screens/signup_page.dart';
-import 'package:projects/utils/size_config.dart';
-
 import '../constants/Colors.dart';
+import 'auth/screen/login_page.dart';
+import 'auth/screen/signup_page.dart';
 
 class StartingPage extends StatelessWidget {
   const StartingPage({super.key});

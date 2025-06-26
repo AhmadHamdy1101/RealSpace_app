@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:projects/constants/Colors.dart';
-import 'package:projects/screens/home_page.dart';
+import 'package:projects/screens/home_page_screen/screen/home_page.dart';
 
 class VerifyScreen extends StatefulWidget {
   const VerifyScreen({Key? key}) : super(key: key);

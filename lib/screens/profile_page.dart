@@ -3,10 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:projects/screens/edit_profile_page.dart';
-import 'package:projects/screens/home_page.dart';
-import '../Widgets/customTextField.dart';
-import '../Widgets/profile_button_wedget.dart';
 import '../constants/Colors.dart';
+import '../utils/Widgets/profile_button_wedget.dart';
 
 
 class Profile_page extends StatelessWidget {

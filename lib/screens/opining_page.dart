@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:projects/Widgets/custom_expanded_button_widget.dart';
 import 'package:projects/constants/Colors.dart';
-import 'package:projects/screens/chosse_singin_login.dart';
 import 'package:projects/screens/starting_page.dart';
 import 'package:projects/utils/app_text_style.dart';
-
-import 'home_page.dart';
+import '../utils/Widgets/custom_expanded_button_widget.dart';
 
 class OpiningPage extends StatelessWidget {
   const OpiningPage({super.key});

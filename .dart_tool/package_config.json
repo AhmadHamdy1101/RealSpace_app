@@ -44,6 +44,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/bloc-9.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.2",
       "packageUri": "lib/",
@@ -114,6 +120,12 @@
       "rootUri": "file:///D:/programing/mobile%20dev/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.7"
+    },
+    {
+      "name": "flutter_bloc",
+      "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-9.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "flutter_launcher_icons",
@@ -266,6 +278,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.1",
       "packageUri": "lib/",
@@ -348,6 +366,12 @@
       "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/postgrest-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/Ahmed%20Hamdy/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "realtime_client",
@@ -602,7 +626,7 @@
       "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-04-22T12:50:17.883491Z",
+  "generated": "2025-05-26T09:38:09.214398Z",
   "generator": "pub",
   "generatorVersion": "3.7.0",
   "flutterRoot": "file:///D:/programing/mobile%20dev/flutter",

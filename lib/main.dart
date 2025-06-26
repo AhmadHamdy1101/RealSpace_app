@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:projects/screens/home_page.dart';
-import 'package:projects/screens/opining_page.dart';
+import 'package:projects/screens/auth/screen/login_page.dart';
+import 'package:projects/screens/auth/screen/viewmodel/authentication_cubit.dart';
+import 'package:projects/screens/home_page_screen/screen/home_page.dart';
+import 'package:projects/screens/home_page_screen/screen/viewmodel/home_page_cubit.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+import 'constants/constatnts.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  const supabaseUrl = 'https://calwjbkgqhvskqypgeso.supabase.co';
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhbHdqYmtncWh2c2txeXBnZXNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2MTUxODAsImV4cCI6MjA1NTE5MTE4MH0.Hbrsk4AjmtQFj-FjLhQ8rrlksUjWjnrR-Ty5QXdoU9c';
-
-
   await Supabase.initialize(
     url: supabaseUrl,
     anonKey: supabaseKey,
@@ -23,11 +24,17 @@ class RealSpace extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData(fontFamily: "outfit"),
-      home: OpiningPage(),
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => HomePageCubit()..fetchData(),),
+        BlocProvider(create: (context) => AuthenticationCubit(),),
+      ],
+      child: GetMaterialApp(
+        theme: ThemeData(fontFamily: "outfit"),
+        home: CurrentUser != null ?  HomePage() : LoginPage(),
+        debugShowCheckedModeBanner: false,
 
+      ),
     );
   }
 }

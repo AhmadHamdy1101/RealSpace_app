@@ -22,13 +22,15 @@ class Property implements SupadartClass<Property> {
   final int? bathroom;
   final int? area;
   final int? floor;
-  final double? Maintenance;
-  final double? payed;
-  final double? instalment;
-  final double? offer;
+  final String? Maintenance;
+  final String? payed;
+  final String? instalment;
+  final String? offer;
   final String? creator;
   final String id;
   final String? downPayment;
+  final int? installmentYears;
+  final String? phone;
 
   const Property({
     required this.createdAt,
@@ -55,6 +57,8 @@ class Property implements SupadartClass<Property> {
     this.creator,
     required this.id,
     this.downPayment,
+    this.installmentYears,
+    this.phone,
   });
 
   static String get table_name => 'property';
@@ -82,6 +86,9 @@ class Property implements SupadartClass<Property> {
   static String get c_creator => 'creator';
   static String get c_id => 'id';
   static String get c_downPayment => 'down_payment';
+  static String get c_installmentYears => 'installment_years';
+  static String get c_phone => 'phone';
+
 
   static List<Property> converter(List<Map<String, dynamic>> data) {
     return data.map(Property.fromJson).toList();
@@ -107,13 +114,15 @@ class Property implements SupadartClass<Property> {
     int? bathroom,
     int? area,
     int? floor,
-    double? Maintenance,
-    double? payed,
-    double? instalment,
-    double? offer,
+    String? Maintenance,
+    String? payed,
+    String? instalment,
+    String? offer,
     String? creator,
     String? id,
     String? downPayment,
+    int? installmentYears,
+    String? phone,
   }) {
     return {
       if (createdAt != null) 'created_at': createdAt.toUtc().toIso8601String(),
@@ -133,13 +142,15 @@ class Property implements SupadartClass<Property> {
       if (bathroom != null) 'bathroom': bathroom,
       if (area != null) 'area': area,
       if (floor != null) 'floor': floor,
-      if (Maintenance != null) 'Maintenance': Maintenance.toString(),
-      if (payed != null) 'payed': payed.toString(),
-      if (instalment != null) 'instalment': instalment.toString(),
-      if (offer != null) 'offer': offer.toString(),
+      if (Maintenance != null) 'Maintenance': Maintenance,
+      if (payed != null) 'payed': payed,
+      if (instalment != null) 'instalment': instalment,
+      if (offer != null) 'offer': offer,
       if (creator != null) 'creator': creator,
       if (id != null) 'id': id,
       if (downPayment != null) 'down_payment': downPayment,
+      if (installmentYears != null) 'installment_years': installmentYears,
+      if (phone != null) 'phone': phone,
     };
   }
   static Map<String, dynamic> insert({
@@ -160,13 +171,15 @@ class Property implements SupadartClass<Property> {
     int? bathroom,
     int? area,
     int? floor,
-    double? Maintenance,
-    double? payed,
-    double? instalment,
-    double? offer,
+    String? Maintenance,
+    String? payed,
+    String? instalment,
+    String? offer,
     String? creator,
     String? id,
     String? downPayment,
+    int? installmentYears,
+    String? phone,
   }) {
     return _generateMap(
       createdAt: createdAt,
@@ -193,6 +206,8 @@ class Property implements SupadartClass<Property> {
       creator: creator,
       id: id,
       downPayment: downPayment,
+      installmentYears: installmentYears,
+      phone: phone,
     );
   }
   static Map<String, dynamic> update({
@@ -213,13 +228,15 @@ class Property implements SupadartClass<Property> {
     int? bathroom,
     int? area,
     int? floor,
-    double? Maintenance,
-    double? payed,
-    double? instalment,
-    double? offer,
+    String? Maintenance,
+    String? payed,
+    String? instalment,
+    String? offer,
     String? creator,
     String? id,
     String? downPayment,
+    int? installmentYears,
+    String? phone,
   }) {
     return _generateMap(
       createdAt: createdAt,
@@ -246,6 +263,8 @@ class Property implements SupadartClass<Property> {
       creator: creator,
       id: id,
       downPayment: downPayment,
+      installmentYears: installmentYears,
+      phone: phone,
     );
   }
   factory Property.fromJson(Map<String, dynamic> jsonn) {
@@ -267,13 +286,15 @@ class Property implements SupadartClass<Property> {
       bathroom: jsonn['bathroom'] != null ? int.parse(jsonn['bathroom'].toString()) : 0,
       area: jsonn['area'] != null ? int.parse(jsonn['area'].toString()) : 0,
       floor: jsonn['floor'] != null ? int.parse(jsonn['floor'].toString()) : 0,
-      Maintenance: jsonn['Maintenance'] != null ? double.parse(jsonn['Maintenance'].toString()) : 0.0,
-      payed: jsonn['payed'] != null ? double.parse(jsonn['payed'].toString()) : 0.0,
-      instalment: jsonn['instalment'] != null ? double.parse(jsonn['instalment'].toString()) : 0.0,
-      offer: jsonn['offer'] != null ? double.parse(jsonn['offer'].toString()) : 0.0,
+      Maintenance: jsonn['Maintenance'] != null ? jsonn['Maintenance'].toString() : '',
+      payed: jsonn['payed'] != null ? jsonn['payed'].toString() : '',
+      instalment: jsonn['instalment'] != null ? jsonn['instalment'].toString() : '',
+      offer: jsonn['offer'] != null ? jsonn['offer'].toString() : '',
       creator: jsonn['creator'] != null ? jsonn['creator'].toString() : '',
       id: jsonn['id'] != null ? jsonn['id'].toString() : '',
       downPayment: jsonn['down_payment'] != null ? jsonn['down_payment'].toString() : '',
+      installmentYears: jsonn['installment_years'] != null ? int.parse(jsonn['installment_years'].toString()) : 0,
+      phone: jsonn['phone'] != null ? jsonn['phone'].toString() : '',
     );
   }
 
@@ -295,13 +316,15 @@ class Property implements SupadartClass<Property> {
     int? bathroom,
     int? area,
     int? floor,
-    double? Maintenance,
-    double? payed,
-    double? instalment,
-    double? offer,
+    String? Maintenance,
+    String? payed,
+    String? instalment,
+    String? offer,
     String? creator,
     String? id,
     String? downPayment,
+    int? installmentYears,
+    String? phone,
   }) {
     return {
       if (createdAt != null) 'created_at': createdAt,
@@ -328,6 +351,8 @@ class Property implements SupadartClass<Property> {
       if (creator != null) 'creator': creator,
       if (id != null) 'id': id,
       if (downPayment != null) 'down_payment': downPayment,
+      if (installmentYears != null) 'installment_years': installmentYears,
+      if (phone != null) 'phone': phone,
     };
   }
   Map<String, dynamic> toJson() {
@@ -356,6 +381,8 @@ class Property implements SupadartClass<Property> {
       creator: creator,
       id: id,
       downPayment: downPayment,
+      installmentYears: installmentYears,
+      phone: phone,
     );
   }
   Property copyWith({
@@ -376,13 +403,15 @@ class Property implements SupadartClass<Property> {
     int? bathroom,
     int? area,
     int? floor,
-    double? Maintenance,
-    double? payed,
-    double? instalment,
-    double? offer,
+    String? Maintenance,
+    String? payed,
+    String? instalment,
+    String? offer,
     String? creator,
     String? id,
     String? downPayment,
+    int? installmentYears,
+    String? phone,
   }) {
     return Property(
       createdAt: createdAt ?? this.createdAt,
@@ -409,8 +438,11 @@ class Property implements SupadartClass<Property> {
       creator: creator ?? this.creator,
       id: id ?? this.id,
       downPayment: downPayment ?? this.downPayment,
+      installmentYears: installmentYears ?? this.installmentYears,
+      phone: phone ?? this.phone,
     );
   }
+
 
 }
 
